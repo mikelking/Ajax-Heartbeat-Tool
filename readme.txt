@@ -1,3 +1,8 @@
+ajax-heartbeat-tool
+===================
+
+AJAX Heartbeat Tool - a WordPress Plugin
+
 === Plugin Name ===
 Contributors: vizkr
 Tags: ajax, heartbeat
@@ -19,7 +24,7 @@ Provides a method of turning the WordPress heartbeat off as well as change some 
 
 == Installation ==
 
-1. Upload `ajax-heartbeat-tool` directory to the `/wp-content/plugins/` directory
+1. Upload `ajax-heartbeat-tool` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
