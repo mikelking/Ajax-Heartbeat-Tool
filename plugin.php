@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: AJAX Hearbeat Tool
+Plugin Name: AJAX Heartbeat Tool
 Version: 1.0
 Description: Provides a method of turning the WordPress heartbeat off as well as change some settings. 
 Author: Mikel King
