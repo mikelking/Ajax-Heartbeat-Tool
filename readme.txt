@@ -1,9 +1,4 @@
-ajax-heartbeat-tool
-===================
-
-AJAX Heartbeat Tool - a WordPress Plugin
-
-=== Plugin Name ===
+=== AJAX Heartbeat Tool ===
 Contributors: vizkr
 Tags: ajax, heartbeat
 Requires at least: 3.8
