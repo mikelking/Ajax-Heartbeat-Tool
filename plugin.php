@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: AJAX Heartbeat Tool
-Version: 1.0
+Version: 1.1
 Description: Provides a method of turning the WordPress heartbeat off as well as change some settings. 
 Author: Mikel King
 Text Domain: ajax-heartbeat-tool
@@ -46,7 +46,7 @@ License URI: http://opensource.org/licenses/BSD-3-Clause
 */
 
 class Ajax_Heartbeat_Tool {
-    const VERSION   = '1.0';
+    const VERSION   = '1.1';
     const INTERVAL  = 60;
     const DISABLED  = false;
     const ENABLED   = true;
@@ -71,7 +71,10 @@ class Ajax_Heartbeat_Tool {
             return( self::$initialized );
         }
     }
-
+    /*
+        The get_called_class() kind requires PHP5.3 or newer
+        (http://php.net/manual/en/function.get-called-class.php)
+    */
     public static function get_instance() {
         $caller = get_called_class();
         if ( !isset( self::$instance[$caller] ) ) {
@@ -82,22 +85,25 @@ class Ajax_Heartbeat_Tool {
         return( self::$instance[$caller] );
     }
 
-    public function disable_wp_heartbeat_autostart( $settings ) {
-        $settings['autostart'] = self::INTERVAL;
+    public function disable_wp_heartbeat_autostart( $settings = null ) {
+        $settings['autostart'] = self::DISABLED;
         return( $settings );
     }
     
-    public function set_wp_heartbeat_interval( $settings ) {
-        $settings['interval'] = self::DISABLED;
+    public function set_wp_heartbeat_interval( $settings = null ) {
+        $settings['interval'] = self::INTERVAL;
         return( $settings );
     }
     
     public function unregister_wp_heartbeat() {
     	global $pagenow;
     	
-    	if ( 'post.php' != $pagenow && 'post-new.php' != $pagenow ) {
+    	if ( $pagenow != 'post.php' &&
+            $pagenow != 'post-new.php' &&
+            $pagenow != 'edit.php'
+           ) {
+
     		wp_deregister_script('heartbeat');
-    		//wp_register_script('heartbeat', false);
     	}
     }
 }
