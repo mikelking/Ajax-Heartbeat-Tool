@@ -36,6 +36,15 @@ Currently no, but in the future I plan to add the ability to adjust the settings
 
 == Changelog ==
 
+= 1.4 =
+* Refactored the singleton creator, eliminating the reliance on get_called_class()
+
+= 1.3 =
+* minor developement changes not pushed
+
+= 1.2 =
+* minor developement changes not pushed
+
 = 1.1 =
 * Added 'Quick edit exclusion'
 * Corrected misleading constants
