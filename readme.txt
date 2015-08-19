@@ -2,7 +2,7 @@
 Contributors: vizkr
 Tags: ajax, heartbeat
 Requires at least: 3.8
-Tested up to: 4.0
+Tested up to: 4.3
 Stable tag: 3.8
 License: BSD(3 Clause)
 License URI: http://opensource.org/licenses/BSD-3-Clause
